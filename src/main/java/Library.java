@@ -1,13 +1,16 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Library {
 
     private int capacity;
     private ArrayList<Book> bookCollection;
+    private HashMap<String, Integer> genres;
 
     public Library(int capacity) {
         this.capacity = capacity;
         this.bookCollection = new ArrayList<Book>();
+        this.genres = new HashMap<String, Integer>();
     }
 
     public int countBooks() {
@@ -38,5 +41,17 @@ public class Library {
         }
         return borrowedBook;
 //        this.bookCollection.remove(book);
+    }
+
+    public void countBooksByGenre() {
+        for (Book book : this.bookCollection) {
+            Integer currentValue = this.genres.get(book.getGenre()); // comes back null if doesn't exist
+            if (currentValue == null) {
+                this.genres.put(book.getGenre(), 1);
+            } else {
+                this.genres.put(book.getGenre(), currentValue + 1); // this should overwrite existing key:value pair
+            }
+        }
+
     }
 }

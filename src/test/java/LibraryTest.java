@@ -52,4 +52,11 @@ public class LibraryTest {
         assertEquals(1, library.countBooks());
     }
 
+//    @Test
+//    public void canCountBooksByGenre() {
+//        library.addBookToCollection(book2);
+//        library.addBookToCollection(book3);
+//
+//    }
+
 }
