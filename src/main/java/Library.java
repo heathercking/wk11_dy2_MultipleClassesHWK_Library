@@ -34,6 +34,7 @@ public class Library {
         return true;
     }
 
+    // this works but I was wanting it to remove the specific book passed to the function, but that caused problems on line 41, so had to revert to removing the first book
     public Book removeBookFromCollection(Book book) {
         Book borrowedBook = null;
         if (this.countBooks() > 0) {
@@ -43,6 +44,7 @@ public class Library {
 //        this.bookCollection.remove(book);
     }
 
+    //so I think this would work but not sure how to test it... and how to return the actual count?
     public void countBooksByGenre() {
         for (Book book : this.bookCollection) {
             Integer currentValue = this.genres.get(book.getGenre()); // comes back null if doesn't exist
