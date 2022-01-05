@@ -18,10 +18,11 @@ public class Borrower {
         return this.borrowedBooks.size();
     }
 
-    public void addBook(Book book) {
-        this.borrowedBooks.add(book);
+    public void borrowBookFromLibrary(Library library, Book book) {
+        Book borrowedBook = library.removeBookFromCollection(book);
+        this.borrowedBooks.add(borrowedBook);
     }
 
-    
+
 
 }

@@ -31,4 +31,12 @@ public class Library {
         return true;
     }
 
+    public Book removeBookFromCollection(Book book) {
+        Book borrowedBook = null;
+        if (this.countBooks() > 0) {
+            borrowedBook = this.bookCollection.remove(0);
+        }
+        return borrowedBook;
+//        this.bookCollection.remove(book);
+    }
 }
