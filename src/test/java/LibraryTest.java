@@ -16,9 +16,9 @@ public class LibraryTest {
         book = new Book("Harry Potter", "JK Rowling", "Fantasy Fiction");
     }
 
-//    @Test
-//    public void hasBookCollection() {
-//        assertEquals(0, library.countBooks());
-//    }
+    @Test
+    public void hasBookCollection() {
+        assertEquals(0, library.countBooks());
+    }
 
 }
