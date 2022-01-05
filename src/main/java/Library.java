@@ -15,11 +15,20 @@ public class Library {
     }
 
     public void addBookToCollection(Book book) {
-        this.bookCollection.add(book);
+        if (isStockFull()) {
+            this.bookCollection.add(book);
+        }
     }
 
     public int getCapacity() {
         return this.capacity;
+    }
+
+    public boolean isStockFull() {
+        if (countBooks() >= this.capacity) {
+            return false;
+        }
+        return true;
     }
 
 }
