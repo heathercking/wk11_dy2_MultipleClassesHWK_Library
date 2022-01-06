@@ -38,10 +38,12 @@ public class Library {
     public Book removeBookFromCollection(Book book) {
         Book borrowedBook = null;
         if (this.countBooks() > 0) {
-            borrowedBook = this.bookCollection.remove(0);
+            int bookIndex = this.bookCollection.indexOf(book);
+            if (bookIndex != -1) {
+                borrowedBook = this.bookCollection.remove(bookIndex);
+            }
         }
         return borrowedBook;
-//        this.bookCollection.remove(book);
     }
 
     //so I think this would work but not sure how to test it... and how to return the actual count?
